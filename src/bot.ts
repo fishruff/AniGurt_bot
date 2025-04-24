@@ -29,7 +29,7 @@ async function getRandomAnimeArt(): Promise<{
   return { title: random.title, imageUrl: random.url };
 }
 
-cron.schedule("30 10 * * *", async () => {
+cron.schedule("30 06 * * *", async () => {
   console.log("⏰ Время постить артик!");
 
   const image = await getRandomAnimeArt();
@@ -39,7 +39,7 @@ cron.schedule("30 10 * * *", async () => {
     await bot.telegram.sendPhoto(
       CHANNEL_ID,
       { url: image.imageUrl },
-      { caption: image.title },
+      { caption: image.title + " #fanart" },
     );
     console.log("✅ Арт успешно отправлен в канал");
   } catch (error) {

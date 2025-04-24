@@ -1,6 +1,7 @@
 import { Telegraf } from "telegraf";
 import axios from "axios";
 import * as dotenv from "dotenv";
+import { generateReview } from "./generateReview";
 
 dotenv.config();
 
